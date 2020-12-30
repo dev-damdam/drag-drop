@@ -1,4 +1,4 @@
-# badge-ui-component
+# drag-drop-component
 
 ## Project setup
 ```

@@ -1,8 +1,22 @@
-import Vue from 'vue'
-import App from './App.vue'
+import DragComponent from './components/DragComponent.vue'
+import DropComponent from './components/DropComponent.vue'
 
-Vue.config.productionTip = false
+const components = [
+    DragComponent,
+    DropComponent
+];
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const install = function(Vue) {
+    components.forEach(component => {
+        Vue.component(component.name, component);
+    });
+};
+
+if (typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+}
+
+export default {
+    DragComponent,
+    DropComponent
+}
