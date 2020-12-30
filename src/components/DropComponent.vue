@@ -36,7 +36,7 @@ export default {
   .drop-wrapper {
     width: 100%;
     height: 100%;
-    .content-image-wrap {
+    .drop-image-wrap {
       width: 100%;
       height: 100%;
       flex: 0 0 auto;
@@ -45,7 +45,7 @@ export default {
       justify-content: center;
       align-items: center;
 
-      .content-image {
+      .drop-image {
         height: 100%;
       }
     }

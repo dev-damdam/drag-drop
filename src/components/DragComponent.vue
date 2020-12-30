@@ -32,9 +32,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    .content-image-wrap {
+    .drag-image-wrap {
       height: 100%;
-      .content-image {
+      .drag-image {
         height: 100%;
       }
     }
