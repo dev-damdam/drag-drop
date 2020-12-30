@@ -45,9 +45,7 @@
         "not dead"
     ],
     "files": [
-        "dist / *",
-        "src / *",
-        "* .json"
+        "dist/*"
     ],
     "repository": {
         "type": "git",
