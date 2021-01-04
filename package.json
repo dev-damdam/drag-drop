@@ -2,17 +2,16 @@
     "name": "drag-drop-component",
     "version": "0.1.0",
     "private": false,
-    "main": "dist/drag-drop-component.umd.js",
+    "main": "dist/drag-drop-component.common.js",
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "libbuild": "vue-cli-service build --target lib --name drag-drop-component src/main.js"
+        "library:build": "vue-cli-service build --target lib --name drag-drop-component src/main.js"
     },
     "dependencies": {
         "core-js": "^3.6.5",
-        "vue": "^2.6.11",
-        "vue-easy-dnd": "^1.10.2"
+        "vue": "^2.6.11"
     },
     "devDependencies": {
         "@vue/cli-plugin-babel": "~4.5.0",
@@ -23,6 +22,9 @@
         "eslint-plugin-vue": "^6.2.2",
         "node-sass": "^5.0.0",
         "sass-loader": "^10.1.0",
+        "swiper": "^5.4.5",
+        "vue-awesome-swiper": "^4.1.1",
+        "vue-easy-dnd": "^1.10.2",
         "vue-template-compiler": "^2.6.11"
     },
     "eslintConfig": {
@@ -45,7 +47,11 @@
         "not dead"
     ],
     "files": [
-        "dist/*"
+        "dist/*",
+        "src/*",
+        "public/*",
+        "*.json",
+        "*.js"
     ],
     "repository": {
         "type": "git",
