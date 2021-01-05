@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import {Drop} from "vue-easy-dnd";
+import { Drop } from "vue-easy-dnd";
 export default {
   name: "drop-component",
   components: {

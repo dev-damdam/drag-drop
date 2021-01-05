@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { Drag} from "vue-easy-dnd";
+import { Drag } from "vue-easy-dnd";
 export default {
   name: "drag-component",
   components: {
