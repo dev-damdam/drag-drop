@@ -2301,6 +2301,27 @@ module.exports = function (name) {
 
 /***/ }),
 
+/***/ "b64b":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__("23e7");
+var toObject = __webpack_require__("7b0b");
+var nativeKeys = __webpack_require__("df75");
+var fails = __webpack_require__("d039");
+
+var FAILS_ON_PRIMITIVES = fails(function () { nativeKeys(1); });
+
+// `Object.keys` method
+// https://tc39.github.io/ecma262/#sec-object.keys
+$({ target: 'Object', stat: true, forced: FAILS_ON_PRIMITIVES }, {
+  keys: function keys(it) {
+    return nativeKeys(toObject(it));
+  }
+});
+
+
+/***/ }),
+
 /***/ "b727":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2606,6 +2627,21 @@ module.exports =
   (function () { return this; })() || Function('return this')();
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("c8ba")))
+
+/***/ }),
+
+/***/ "df75":
+/***/ (function(module, exports, __webpack_require__) {
+
+var internalObjectKeys = __webpack_require__("ca84");
+var enumBugKeys = __webpack_require__("7839");
+
+// `Object.keys` method
+// https://tc39.github.io/ecma262/#sec-object.keys
+module.exports = Object.keys || function keys(O) {
+  return internalObjectKeys(O, enumBugKeys);
+};
+
 
 /***/ }),
 
@@ -3017,8 +3053,15 @@ var es_array_for_each = __webpack_require__("4160");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
+var es_object_keys = __webpack_require__("b64b");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.for-each.js
 var web_dom_collections_for_each = __webpack_require__("159b");
+
+// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
+var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
+var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"bf540ad4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DragComponent.vue?vue&type=template&id=2fd8db8c&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"drag-container"},[_c('div',{staticClass:"drag-wrapper"},[_c('drag',{staticClass:"drag-image-wrap",attrs:{"data":this.dragData}},[_c('img',{staticClass:"drag-image",attrs:{"src":this.dragData.image_url}})])],1)])}
@@ -3029,10 +3072,6 @@ var staticRenderFns = []
 
 // EXTERNAL MODULE: ./node_modules/reflect-metadata/Reflect.js
 var reflect_metadata_Reflect = __webpack_require__("98db");
-
-// EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
-var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
-var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
 // CONCATENATED MODULE: ./node_modules/vue-class-component/dist/vue-class-component.esm.js
 /**
@@ -5827,6 +5866,8 @@ var DragDropTest_component = componentNormalizer_normalizeComponent(
 
 
 
+
+
  //drag&drop test
 
 /*
@@ -5835,19 +5876,9 @@ Vue.config.productionTip = false;
 */
 
 var components = [DragComponent, DropComponent, DragDropTest];
-
-var install = function install(Vue) {
-  components.forEach(function (Component) {
-    Vue.component(Component.name, Component);
-  });
-};
-/* istanbul ignore if */
-
-
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
-
+Object.keys(components).forEach(function (idx) {
+  external_commonjs_vue_commonjs2_vue_root_Vue_default.a.component(components[idx].name, components[idx]);
+});
 /* harmony default export */ var main = (components); //drag&drop test
 
 /*

@@ -1,3 +1,4 @@
+import Vue from "vue"
 import DragComponent from './components/DragComponent.vue'
 import DropComponent from './components/DropComponent.vue'
 import DragDropTest from './components/test/DragDropTest.vue'
@@ -13,16 +14,9 @@ const components = [
     DragDropTest
 ];
 
-const install = function(Vue) {
-    components.forEach(Component => {
-        Vue.component(Component.name, Component);
-    });
-};
-
-/* istanbul ignore if */
-if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue);
-}
+Object.keys(components).forEach(idx => {
+    Vue.component(components[idx].name, components[idx]);
+});
 
 export default components;
 
