@@ -10,7 +10,7 @@
 <script>
 import { Drag } from "vue-easy-dnd";
 export default {
-  name: "drag-component",
+  name: "DragComponent",
   components: {
     Drag,
   },

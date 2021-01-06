@@ -24,11 +24,7 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default {
-    DragComponent,
-    DropComponent,
-    DragDropTest
-}
+export default components;
 
 //drag&drop test
 /*

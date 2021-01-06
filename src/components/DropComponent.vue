@@ -14,7 +14,7 @@
 <script>
 import { Drop } from "vue-easy-dnd";
 export default {
-  name: "drop-component",
+  name: "DropComponent",
   components: {
     Drop,
   },
