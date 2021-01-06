@@ -1,6 +1,5 @@
 import DragComponent from './components/DragComponent.vue'
 import DropComponent from './components/DropComponent.vue'
-import VueAwesomeSwiper from "vue-awesome-swiper";
 import DragDropTest from './components/test/DragDropTest.vue'
 
 //drag&drop test
@@ -11,13 +10,12 @@ Vue.config.productionTip = false;
 const components = [
     DragComponent,
     DropComponent,
-    VueAwesomeSwiper,
     DragDropTest
 ];
 
 const install = function(Vue) {
-    components.forEach(component => {
-        Vue.component(component.name, component);
+    components.forEach(Component => {
+        Vue.component(Component.name, Component);
     });
 };
 
@@ -26,7 +24,11 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default components;
+export default {
+    DragComponent,
+    DropComponent,
+    DragDropTest
+}
 
 //drag&drop test
 /*
